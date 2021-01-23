@@ -1,6 +1,6 @@
 // CALLBACKS
 const acceptsString1 = (str) => {
-	return str;
+	return;
 };
 
 const acceptsString2 = (str) => {
