@@ -44,8 +44,7 @@ const pies = [
 		ingredients  : 'Pecans, sugar, butter, flour',
 		bakeTemp     : 5000,
 		drinkPairing : 'Milk',
-		imageUrl     :
-			'https://cookiesandcups.com/wp-content/uploads/2018/10/pecanpie-3.jpg',
+		imageUrl     : 'https://cookiesandcups.com/wp-content/uploads/2018/10/pecanpie-3.jpg',
 		instructor   : 'Trinity',
 		iceCream     : 'Vanilla'
 	},
@@ -71,20 +70,33 @@ const printToDom = (divId, textToPrint) => {
 
 const pieBuilder = (taco) => {
 	let domString = '';
-	for (let i = 0; i < taco.length; i++) {
+	// for (let i = 0; i < taco.length; i++) {
+	// 	domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
+	//                   <div class="img-container" style="background-image: url('${taco[i]
+	// 					.imageUrl}');"></div>
+	//                   <div class="card-body">
+	//                     <p class="card-text">${taco[i].name}</p>
+	//                     <p class="card-text">${taco[i].ingredients}</p>
+	//                     <p class="card-text">${taco[i].bakeTemp}</p>
+	//                     <p class="card-text">${taco[i].drinkPairing}</p>
+	//                     <p class="card-text">${taco[i].iceCream}</p>
+	//                     <button type="button" class="btn btn-danger" id="${i}">Delete</button>
+	//                   </div>
+	//                 </div>`;
+	// }
+	taco.forEach((item, i) => {
 		domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
-                    <div class="img-container" style="background-image: url('${taco[i]
-						.imageUrl}');"></div>
-                    <div class="card-body">
-                      <p class="card-text">${taco[i].name}</p>
-                      <p class="card-text">${taco[i].ingredients}</p>
-                      <p class="card-text">${taco[i].bakeTemp}</p>
-                      <p class="card-text">${taco[i].drinkPairing}</p>
-                      <p class="card-text">${taco[i].iceCream}</p>
-                      <button type="button" class="btn btn-danger" id="${i}">Delete</button>
-                    </div>
-                  </div>`;
-	}
+    <div class="img-container" style="background-image: url('${taco[i].imageUrl}');"></div>
+    <div class="card-body">
+      <p class="card-text">${item.name}</p>
+      <p class="card-text">${item.ingredients}</p>
+      <p class="card-text">${item.bakeTemp}</p>
+      <p class="card-text">${item.drinkPairing}</p>
+      <p class="card-text">${item.iceCream}</p>
+      <button type="button" class="btn btn-danger" id="${i}">Delete</button>
+    </div>
+  </div>`;
+	});
 	printToDom('#pies', domString);
 };
 
