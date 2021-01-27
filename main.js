@@ -84,19 +84,40 @@ const pieBuilder = (taco) => {
 	//                   </div>
 	//                 </div>`;
 	// }
-	taco.forEach((item, i) => {
+
+	// forEach loop
+	// taco.forEach((item, i) => {
+	// 	domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
+	//   <div class="img-container" style="background-image: url('${taco[i].imageUrl}');"></div>
+	//   <div class="card-body">
+	//     <p class="card-text">${item.name}</p>
+	//     <p class="card-text">${item.ingredients}</p>
+	//     <p class="card-text">${item.bakeTemp}</p>
+	//     <p class="card-text">${item.drinkPairing}</p>
+	//     <p class="card-text">${item.iceCream}</p>
+	//     <button type="button" class="btn btn-danger" id="${i}">Delete</button>
+	//   </div>
+	// </div>`;
+	// });
+
+	// for...of loop
+	for (const [
+		i,
+		item
+	] of taco.entries()) {
 		domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
-    <div class="img-container" style="background-image: url('${taco[i].imageUrl}');"></div>
-    <div class="card-body">
-      <p class="card-text">${item.name}</p>
-      <p class="card-text">${item.ingredients}</p>
-      <p class="card-text">${item.bakeTemp}</p>
-      <p class="card-text">${item.drinkPairing}</p>
-      <p class="card-text">${item.iceCream}</p>
-      <button type="button" class="btn btn-danger" id="${i}">Delete</button>
-    </div>
+	  <div class="img-container" style="background-image: url('${taco[i].imageUrl}');"></div>
+	  <div class="card-body">
+	    <p class="card-text">${item.name}</p>
+	    <p class="card-text">${item.ingredients}</p>
+	    <p class="card-text">${item.bakeTemp}</p>
+	    <p class="card-text">${item.drinkPairing}</p>
+	    <p class="card-text">${item.iceCream}</p>
+	    <button type="button" class="btn btn-danger" id="${i}">Delete</button>
+	  </div>
   </div>`;
-	});
+	}
+
 	printToDom('#pies', domString);
 };
 
