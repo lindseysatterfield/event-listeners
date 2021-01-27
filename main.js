@@ -123,11 +123,44 @@ const handleButtonClick = (e) => {
 	}
 };
 
+// C in CRUD: Create new pies
+const getFormInfo = (e) => {
+	e.preventDefault(); // stop the page from refreshing
+
+	// grabbing all the values from the form field
+	const name = document.querySelector('#name').value;
+	const ingredients = document.querySelector('#ingredients').value;
+	const bakeTemp = document.querySelector('#bakeTemp').value;
+	const drinkPairing = document.querySelector('#drinkPairing').value;
+	const imageUrl = document.querySelector('#imageUrl').value;
+	const instructor = document.querySelector('#instructor').value;
+	const iceCream = document.querySelector('#iceCream').value;
+
+	// short hand object notation to add values to obj
+	const obj = {
+		name,
+		bakeTemp,
+		ingredients,
+		drinkPairing,
+		imageUrl,
+		instructor,
+		iceCream
+	};
+
+	pies.push(obj); // adds obj to the pies array
+
+	// rebuilding the DOM
+	pieBuilder(pies);
+
+	document.querySelector('form').reset(); // clears out the form after you submit a pie
+};
+
 const buttonEvents = () => {
 	document.querySelector('#All').addEventListener('click', handleButtonClick);
 	document.querySelector('#Doc').addEventListener('click', handleButtonClick);
 	document.querySelector('#Aja').addEventListener('click', handleButtonClick);
 	document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+	document.querySelector('form').addEventListener('submit', getFormInfo);
 
 	// allBtn.addEventListener('click', handleButtonClick);
 };
