@@ -44,8 +44,7 @@ const pies = [
 		ingredients  : 'Pecans, sugar, butter, flour',
 		bakeTemp     : 5000,
 		drinkPairing : 'Milk',
-		imageUrl     :
-			'https://cookiesandcups.com/wp-content/uploads/2018/10/pecanpie-3.jpg',
+		imageUrl     : 'https://cookiesandcups.com/wp-content/uploads/2018/10/pecanpie-3.jpg',
 		instructor   : 'Trinity',
 		iceCream     : 'Vanilla'
 	},
@@ -60,3 +59,18 @@ const pies = [
 		iceCream     : 'none'
 	}
 ];
+
+// .forEach // does the same thing as a for loop
+
+const array = [
+	1,
+	2,
+	3,
+	4,
+	5,
+	6
+];
+
+array.forEach((item) => {
+	console.log(item);
+});
